@@ -4,6 +4,8 @@ import MaskedView from "@react-native-community/masked-view";
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import { Friends } from './Components/Friends';
+
 export default function App() {
 
   const col = ['rgba(0, 0, 0, 0)','rgba(0, 0, 0, 0.85)', 'rgba(0, 0, 0, 1)']
@@ -30,10 +32,19 @@ export default function App() {
             
           <Text style={styles.nome}>Didy Love</Text>
           <Text style={styles.userName}>@didyleo</Text>
+
+          <Friends
+            title = 'Friends in common'
+            foto1 = 'https://lh3.googleusercontent.com/LXS4M8dyY5RbjrYZijwY_GuvYkd4eYc7bokdL9Mv6qkidZtBVN9KOxXVTd-4oRcKbu3VLDXOnUNLkiN-65d57nOJxcPD2KEx_a0u3lA'
+            foto2 = 'https://lh3.googleusercontent.com/XCZxyb0V_FCxyj52z8NB_PiqwhH8kfaWSlw27EtrlbA_RyuWOM3Qf2tOz-k5G70CWT6h8e6354H9h4AFWoGPqQqf7VuqbSZWooqXSVc'
+            foto3 = 'https://lh3.googleusercontent.com/oO6ybJSZjUadBQPFlYc--rF5pTAI9TWOGBgbh52E_BIQITsJUwZpL6Dc6vnjF7p9QVrkyxnv8DhSMBo3W_zA4hXTwZi_SdFnttd0IAuz'
+          />
+
+        
           <Text style={styles.dailies}>Favorite Dailies</Text>
 
           {dailiesPerfil('https://w0.peakpx.com/wallpaper/266/703/HD-wallpaper-fernando-alonso-alonso-f1-fa14-fernando-formula-1.jpg')}
-          {dailiesPerfil('https://i.redd.it/n81qxcn735w61.jpg')}
+          {dailiesPerfil('https://lh3.googleusercontent.com/La34tWXDayquYMWpys4eyKdCww86C5JAjWbkH55ahh01exCFdLNYxcFM8ySbqeIwxyJL7maSpzRIlR6DDV2sdiAX9qXWL0FkAtR3Dlw')}
 
           <TouchableOpacity>
             <View style={{flexDirection:'row', top: 10, paddingHorizontal: '40%'}}>
@@ -50,13 +61,7 @@ export default function App() {
 //função dailies feitos
 const dailiesPerfil = (foto) => {
   return (
-    <SafeAreaView style={{flexDirection: 'row', marginTop: 15, paddingHorizontal: '4.5%'}}>
-      <TouchableOpacity style={{paddingHorizontal:4}}>
-        <Image
-          style = {styles.fotos}
-          source = {{uri: foto}}
-        />
-      </TouchableOpacity>
+    <SafeAreaView style={{flexDirection: 'row', marginTop: 15, paddingHorizontal: '11%'}}>
       <TouchableOpacity style={{paddingHorizontal:4}}>
         <Image
           style = {styles.fotos}
@@ -106,7 +111,7 @@ const styles = StyleSheet.create({
   userName: {
     fontSize: 13,
     fontWeight: 200,
-    color: 'white',
+    color: '#DADADA',
     top: '40%',
     left: 25,
   },
